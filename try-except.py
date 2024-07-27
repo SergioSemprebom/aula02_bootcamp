@@ -3,6 +3,13 @@ Escreva um programa que converta a temperatura de Celsius para Fahrenheit.
 O programa deve solicitar ao usuário a temperatura em Celsius e, utilizando try-except, 
 garantir que a entrada seja numérica, tratando qualquer ValueError. Imprima o resultado 
 em Fahrenheit ou uma mensagem de erro se a entrada não for válida.'''
+try:
+    celsius = int(input("Digite um valor em Celsius: "))
+    fahrenheit = (celsius * 9/5) + 32
+    print(f"O valor de {celsius}®C em fahrenheit é: {fahrenheit}")
+except ValueError:
+    print("Por favor, digite um numero valido para a temperatura")
+print('==========================================================================================')
 
 
 '''Exercício 22: Verificador de Palíndromo
@@ -10,6 +17,17 @@ Crie um programa que verifica se uma palavra ou frase é um palíndromo (lê-se 
 de trás para frente, desconsiderando espaços e pontuações). Utilize try-except para garantir 
 que a entrada seja uma string. Dica: Utilize a função isinstance() para verificar o tipo da entrada.'''
 
+entrada = input("Digite uma palavra: ")
+if isinstance(entrada, str):
+    formatado = entrada.replace(" ","").lower()
+    if formatado == formatado[::-1]:
+        print("É um palindromo.")
+    else:
+        print("Não é um plindromo.")
+else:
+    print("Entrada invalida. Por favor digite uma palavra ou frase.")
+
+print('==========================================================================================')
 
 '''Exercício 23: Calculadora Simples
 Desenvolva uma calculadora simples que aceite duas entradas numéricas e 
